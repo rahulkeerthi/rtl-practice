@@ -1,12 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
 import App from "./App";
+import { render, screen } from "./custom-render";
 
 describe("<App />", () => {
-	it("renders the <App /> component correctly", () => {
-		const { getByText } = render(<App />);
+	it("Renders <App /> component correctly", () => {
+		render(<App />);
 		expect(
-			getByText(/Getting started with React testing library/i)
+			screen.getByText(/Getting started with React testing library/i)
 		).toBeInTheDocument();
 	});
 });
