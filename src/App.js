@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import { TodoList } from "./TodoList";
 import "./App.css";
 function App() {
 	return (
@@ -6,6 +8,11 @@ function App() {
 			<header className='App-header'>
 				<h2>Getting started with React testing library</h2>
 			</header>
+			<div className='App-body'>
+				<BrowserRouter>
+					<Route exact path='/' component={TodoList} />
+				</BrowserRouter>
+			</div>
 		</div>
 	);
 }
